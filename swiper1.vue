@@ -5,57 +5,47 @@
       <div class="testimonials">
         <div class="swiper-container testimonial-content-home5">
           <!-- Main Swiper -> pass thumbs swiper instance -->
-          <swiper :modules="[Thumbs]" :thumbs="{ swiper: thumbsSwiper }"
-            :slides-per-view="1"
-            :space-between="30"
-            @swiper="onSwiper"
-            @slideChange="onSlideChange"
-          >
-            <swiper-slide class="testimonial-block-home5">
-              <div class="inner-box">
-                <div class="image-box"><figure class="image"><img class="rounded-circle" src="/images/resource/testi-1.png" alt=""></figure></div>
-                <div class="text">This is due to their excellent service, competitive pricing and customer support. It’s throughly refresing to get such a personal touch.</div>
-                <h4 class="name">Christine Eve</h4>
-              </div>
-            </swiper-slide>
-            <swiper-slide class="testimonial-block-home5">
-              <div class="inner-box">
-                <div class="image-box"><figure class="image"><img class="rounded-circle" src="/images/resource/testi-1.png" alt=""></figure></div>
-                <div class="text">competitive pricing and customer support. It’s throughly refresing to get such a personal touch. This is due to their excellent service, </div>
-                <h4 class="name">Christine Eve</h4>
-              </div>
-            </swiper-slide>
-            <swiper-slide class="testimonial-block-home5">
-              <div class="inner-box">
-                <div class="image-box"><figure class="image"><img class="rounded-circle" src="/images/resource/testi-1.png" alt=""></figure></div>
-                <div class="text">pricing and customer support. It’s throughly refresing to get such This is due to their excellent service, competitive a personal touch.</div>
-                <h4 class="name">Christine Eve</h4>
-              </div>
-            </swiper-slide>
-            <swiper-slide class="testimonial-block-home5">
-              <div class="inner-box">
-                <div class="image-box"><figure class="image"><img class="rounded-circle" src="/images/resource/testi-1.png" alt=""></figure></div>
-                <div class="text">pricing and customer support. It’s throughly refresing to get such This is due to their excellent service, competitive a personal touch.</div>
-                <h4 class="name">Christine Eve</h4>
-              </div>
-            </swiper-slide>
-          </swiper>
-        </div>
-
-        <!-- It is also required to set watchSlidesProgress prop -->
-        <div class="swiper-container testimonial-thumbs-home5">
-          <div class="swiper-wrapper">
+          <swiper
+            :style="{
+              '--swiper-navigation-color': '#fff',
+                '--swiper-pagination-color': '#fff',
+              }"
+              :spaceBetween="10"
+              :navigation="false"
+              :loop="true"
+              :pagination="{ clickable: true,}"
+              :thumbs="{ swiper: thumbsSwiper }"
+              :modules="modules"
+              class="mySwiper2">
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-1.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-2.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-3.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-4.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-5.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-6.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-7.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-8.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-9.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-10.jpg" /></swiper-slide>
+            </swiper>
             <swiper
-              :slides-per-view="3"
-              :modules="[Thumbs]"
-              watch-slides-progress
               @swiper="setThumbsSwiper"
-              :space-between="10"
-            >
-              <swiper-slide class="testimonial-thumb"><figure class="image"><img class="rounded-circle" src="/images/resource/testi-1.jpg" alt=""></figure></swiper-slide>
-              <swiper-slide class="testimonial-thumb"><figure class="image"><img class="rounded-circle" src="/images/resource/testi-2.jpg" alt=""></figure></swiper-slide>
-              <swiper-slide class="testimonial-thumb"><figure class="image"><img class="rounded-circle" src="/images/resource/testi-1.jpg" alt=""></figure></swiper-slide>
-              <swiper-slide class="testimonial-thumb"><figure class="image"><img class="rounded-circle" src="/images/resource/testi-2.jpg" alt=""></figure></swiper-slide>
+              :spaceBetween="10"
+              :slidesPerView="4"
+              :freeMode="true"
+              :watchSlidesProgress="true"
+              :modules="modules"
+              class="mySwiper">
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-1.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-2.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-3.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-4.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-5.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-6.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-7.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-8.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-9.jpg" /></swiper-slide>
+              <swiper-slide><img src="https://swiperjs.com/demos/images/nature-10.jpg" /></swiper-slide>
             </swiper>
           </div>
         </div>
@@ -64,9 +54,19 @@
   </section>
 </template>
 <script>
-  import { ref } from 'vue';
-  import { Thumbs } from 'swiper/modules';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+import { ref } from 'vue';
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
+import 'swiper/css/thumbs';
+
+
+// import required modules
+import { FreeMode, Navigation, Pagination, Thumbs } from 'swiper/modules';
 
   export default {
     components: {
@@ -82,6 +82,7 @@
         Thumbs,
         thumbsSwiper,
         setThumbsSwiper,
+        modules: [FreeMode, Navigation, Pagination, Thumbs],
       };
     },
   };
